@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.detail.DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:menu="@menu/favorite_menu"
+            app:title="@string/detail_user" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:indeterminateTint="?attr/colorOnSurface"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_avatar"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="10dp"
+                    app:civ_border_color="?attr/colorOnSurface"
+                    app:civ_border_width="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    style="@style/TextDetail"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/name"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/user_avatar"
+                    app:layout_constraintStart_toStartOf="@+id/user_avatar"
+                    app:layout_constraintTop_toBottomOf="@+id/user_avatar" />
+
+                <TextView
+                    android:id="@+id/user_username"
+                    style="@style/TextDetail"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/username"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@+id/user_name"
+                    app:layout_constraintStart_toStartOf="@+id/user_name"
+                    app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+                <TextView
+                    android:id="@+id/user_repo"
+                    style="@style/TextDetail"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/reposiroties"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_username" />
+
+                <TextView
+                    android:id="@+id/user_follower"
+                    style="@style/TextDetail"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/follower"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/user_following"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_repo" />
+
+                <TextView
+                    android:id="@+id/user_following"
+                    style="@style/TextDetail"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/following"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/user_follower"
+                    app:layout_constraintTop_toBottomOf="@id/user_repo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorSurface"
+                app:tabIndicatorColor="?attr/colorOnSurface"
+                app:tabIndicatorHeight="8dp"
+                app:tabTextColor="?attr/colorOnSurface" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_fav"
+        style="@style/Widget.Material3.FloatingActionButton.Surface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@color/fab"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/favorite"
+        app:srcCompat="@drawable/ic_favorite_fab"
+        app:tint="?attr/colorSurface" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

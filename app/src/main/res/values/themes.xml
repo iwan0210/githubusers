@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GitHubUser" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/charcoal</item>
+        <item name="colorPrimary">@color/charcoal</item>
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
+    <style name="Theme.GitHubUser" parent="Base.Theme.GitHubUser" />
+
+    <style name="Theme.GitHubUser.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/charcoal</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_github</item>
+        <item name="postSplashScreenTheme">@style/Theme.GitHubUser</item>
+    </style>
+
+    <style name="TextDetail">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+</resources>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">GitHub User</string>
+    <string name="detail_user">Detail User</string>
+    <string name="search">Search</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="reposiroties">Repositories</string>
+    <string name="follower">Followers</string>
+    <string name="following">Following</string>
+    <string name="error">Error / No Data</string>
+    <string name="close">Close</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+    <string name="exitMessage">Do you want to close this application ?</string>
+    <string name="follow">%d following</string>
+    <plurals name="followers">
+        <item quantity="zero">0 follower</item>
+        <item quantity="one">1 follower</item>
+        <item quantity="other">%d followers</item>
+    </plurals>
+    <plurals name="repo">
+        <item quantity="zero">0 Repository</item>
+        <item quantity="one">1 Repository</item>
+        <item quantity="other">%d Repositories</item>
+    </plurals>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
+    <string name="dark_mode">Dark Mode</string>
+</resources>
